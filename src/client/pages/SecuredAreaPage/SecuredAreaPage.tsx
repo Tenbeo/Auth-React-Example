@@ -23,7 +23,6 @@ export function SecuredArea ( props:ISecuredAreaProps ) {
 		tenbeoAuthModel.logOut().then( props.onLoggedOut )
 	}
 
-
 	return <div>
 		<h1>Secured Area</h1>
 		<h3>Hello { props.user.name } <button onClick={ logOut }>Log out</button></h3>
