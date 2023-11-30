@@ -14,6 +14,7 @@ This is an implementation example for the **Tenbeo Login** with **React** and **
 - **Preact** for the UI
 - **Fastify** for the Node server
 - **Esbuild** for the **server** and **client** build
+- **Typescript**
 
 ### Install dependencies
 
@@ -42,9 +43,12 @@ Deploy it anywhere ( it only needs an SSL ), or start the dev server locally to 
 
 #### You have access to an instance
 
-Connect to you Tenbeo Auth Instance admin panel and create an app. Let's name it `react-application-example`.
-Your user has to subscribe to this app. 
-Next, edit `tenbeoAuthInstanceLocation` in `src/_common/tenbeo.config.ts` and replace your instance URL. 
+Connect to you Tenbeo Auth Instance admin panel and create an app.
+- Let's name it `react-application-example` (or change `src/_common/tenbeo.config.ts`)
+- Your user has to subscribe to this app.
+- And your app need to allow the correct host to avoid CORS issues.
+
+Next, edit `tenbeoAuthInstanceLocation` in `src/_common/tenbeo.config.ts` and replace with your instance URL. 
 
 ### Main files
 

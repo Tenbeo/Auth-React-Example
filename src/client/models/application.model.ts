@@ -2,6 +2,10 @@
 
 let _tenbeoSessionId:string
 
+interface IApplicationSecuredResponse {
+	privateInformation:string
+}
+
 export const applicationModel = {
 
 	/**
@@ -12,7 +16,7 @@ export const applicationModel = {
 		_tenbeoSessionId = value
 	},
 
-	async getSecuredData () {
+	async getSecuredData ():Promise<IApplicationSecuredResponse> {
 		const request = await fetch(`/api/secured-api/get-secured-data`, {
 			// No need for cors credentials here but send the session ID through a header
 			// so the server will be able to validate our request

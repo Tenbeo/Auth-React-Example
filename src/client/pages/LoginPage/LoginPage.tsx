@@ -1,18 +1,19 @@
 import { h } from "preact"
 import { useLayoutEffect, useRef, useState } from "preact/hooks";
 import { tenbeoAuthModel } from "../../models/tenbeo-auth.model";
+import { IUser } from "../../../_common/struct/auth.struct";
 
 // Time interval to track login status, in seconds
 const trackInterval = 1
 
 interface ILoginProps {
-	onLoggedIn?: ( sessionId:string, user ) => any
+	onLoggedIn?: ( sessionId:string, user:IUser ) => any
 }
 
 export function LoginPage ( props:ILoginProps ) {
 
 	// Login QR-Code image as dataurl
-	const [ qr, setQR ] = useState()
+	const [ qr, setQR ] = useState<string>()
 
 	const trackIntervalID = useRef<any>()
 

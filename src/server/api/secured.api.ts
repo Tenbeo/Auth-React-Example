@@ -1,5 +1,15 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { tenbeoAuthInstanceApplicationSlug, tenbeoAuthInstanceLocation } from "../../_common/config/tenbeo.config";
+import { ISession, IUser } from "../../_common/struct/auth.struct";
+
+interface IVerifySessionResponse {
+	session		:ISession
+	user		?:IUser
+	app			: {
+		slug:string
+	}
+	subscribes	:boolean
+}
 
 export function attachSecuredAPI ( server:FastifyInstance ) {
 	/**

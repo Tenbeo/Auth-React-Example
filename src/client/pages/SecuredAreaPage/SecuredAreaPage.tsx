@@ -2,10 +2,11 @@ import { h } from "preact"
 import { tenbeoAuthModel } from "../../models/tenbeo-auth.model";
 import { useState } from "preact/hooks";
 import { applicationModel } from "../../models/application.model";
+import { IUser } from "../../../_common/struct/auth.struct";
 
 
 interface ISecuredAreaProps {
-	user			:any
+	user			:IUser
 	onLoggedOut		:() => void
 }
 

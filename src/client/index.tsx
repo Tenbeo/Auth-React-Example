@@ -3,13 +3,14 @@ import { useState } from "preact/hooks";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { SecuredArea } from "./pages/SecuredAreaPage/SecuredAreaPage";
 import { applicationModel } from "./models/application.model";
+import { IUser } from "../_common/struct/auth.struct";
 
 
 function App () {
 
-	const [ loggedUser, setLoggedUser ] = useState( null )
+	const [ loggedUser, setLoggedUser ] = useState<IUser>( null )
 
-	function setLoginInfo ( sessionId:string, user ) {
+	function setLoginInfo ( sessionId:string, user:IUser ) {
 		applicationModel.tenbeSessionId = sessionId
 		setLoggedUser( user )
 	}
