@@ -2,11 +2,8 @@ import { h, render } from "preact";
 import { useState } from "preact/hooks";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { SecuredArea } from "./pages/SecuredAreaPage/SecuredAreaPage";
-import { tenbeoAuthModel } from "./models/tenbeo-auth.model";
 import { applicationModel } from "./models/application.model";
 
-tenbeoAuthModel.tenbeoAuthInstanceLocation = "http://localhost:3000"
-tenbeoAuthModel.tenbeoAuthApplicationSlug = "test"
 
 function App () {
 
@@ -19,10 +16,14 @@ function App () {
 
 	return <div>
 		{
+			// Show login page if not logged
 			loggedUser === null
 			? <LoginPage
 				onLoggedIn={ setLoginInfo }
 			/>
+			// Show secured area when logged
+			// Be careful to never include sensitive data in this component
+			// And always use a secured API ( see component source code )
 			: <SecuredArea
 				user={ loggedUser }
 				onLoggedOut={ () => setLoginInfo(null, null) }
