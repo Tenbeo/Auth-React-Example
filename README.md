@@ -6,7 +6,8 @@ This is an implementation example for the **Tenbeo Login** with **React** and **
 
 ### Dependencies
 
-- Node v18+ and NPM
+- Git
+- Node v18+ and npm
 
 ### Stack
 
